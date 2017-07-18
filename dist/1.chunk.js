@@ -1,0 +1,1 @@
+webpackJsonp([1],{12:function(n,e){n.exports={render:function(){var n=this,e=n.$createElement;return(n._self._c||e)("div",[n._v("\n  Comp3.vue (import)\n")])},staticRenderFns:[]}},8:function(n,e,t){var r=t(0)(null,t(12),null,null);n.exports=r.exports}});
