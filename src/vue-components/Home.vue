@@ -17,11 +17,14 @@
   </div>
 </template>
 <script>
-import comp1 from "./Comp1.vue";
-import comp2 from "./Comp2.vue";
+// import comp1 from "./Comp1.vue";
+// import comp2 from "./Comp2.vue";
+
+const comp1 = () => import('./Comp1.vue');
+const comp2 = () => import('./Comp2.vue');
 
 // with props
-import comp4 from "./Comp4.vue";
+const comp4 = () => import('./Comp4.vue');
 
   export default {
     data () {

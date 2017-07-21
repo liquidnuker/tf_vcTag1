@@ -1,0 +1,1 @@
+webpackJsonp([4],{14:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=t(15),u=t(0),l=u(null,r.a,null,null,null);n.default=l.exports},15:function(e,n,t){"use strict";var r=function(){var e=this,n=e.$createElement;return(e._self._c||n)("div",[e._v("\r\nComp2.vue\r\n")])},u=[],l={render:r,staticRenderFns:u};n.a=l}});
