@@ -1,43 +1,59 @@
 <template>
   <div>
 
-  <component v-bind:is="currentView" />
+    <component v-bind:is="currentView" />
 
-  <!-- ok -->
-  <!-- <component v-bind:is="currentView" 
-  :pr-message="testMessage"
-  :pr-url="url" /> -->
+    <!-- ok -->
+<!-- <component v-bind:is="currentView" 
+:pr-message="testMessage"
+:pr-url="url" /> -->
 
-  <Comp2 />
-  <button v-on:click="changeView('Comp2')">change</button>
+<Comp2 />
+<button v-on:click="changeView('Comp2')">change</button>
 
-  <Comp4 :pr-message="testMessage"
-  :pr-url="url" />
-  
-  </div>
+<Comp4 :pr-message="testMessage"
+:pr-url="url" />
+
+<hr>
+<div v-for="i in items">
+  <p>{{ i.itemName }}</p>
+</div>
+<hr>
+
+<button v-on:click="changeItem1()">changeItem1</button>
+
+<Comp5 :pr-data="items"/>
+
+
+
+</div>
 </template>
 <script>
-// import comp1 from "./Comp1.vue";
-// import comp2 from "./Comp2.vue";
+import {store} from "../js/store.js";
 
 const comp1 = () => import('./Comp1.vue');
 const comp2 = () => import('./Comp2.vue');
 
 // with props
 const comp4 = () => import('./Comp4.vue');
+const comp5 = () => import('./Comp5.vue');
 
   export default {
     data () {
       return {   
         currentView: comp1,
         testMessage: "testmessageZ",
-        url: "http://"
+        url: "http://",
+
+        items: store.items
+
       }
     },
     components: {
       Comp1: comp1,
       Comp2: comp2,
-      Comp4: comp4
+      Comp4: comp4,
+      Comp5: comp5
     },
     mounted: function () {
       // console.log("Home.vue mounted");
@@ -45,6 +61,12 @@ const comp4 = () => import('./Comp4.vue');
     methods: {
       changeView: function(component) {
         this.currentView = component;
+      },
+      refresh: function() {
+        // this.items = store.items;
+      },
+      changeItem1: function() {
+        store.items[0].itemName = "zzzzzzzz";
       }
     }
   }
